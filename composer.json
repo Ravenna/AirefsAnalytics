@@ -24,7 +24,8 @@
     "extra": {
         "statamic": {
             "name": "Airefs Analytics",
-            "description": "Airefs Analytics addon"
+            "description": "Airefs Analytics addon",
+            "namespace": "Ravenna\\AirefsAnalytics"
         },
         "laravel": {
             "providers": [
