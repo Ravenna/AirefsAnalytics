@@ -15,12 +15,30 @@ class AirefsClient
 
     public function sendEvent(array $data)
     {
-        Log::info($data);
-        if (!$this->token) return;
+        if (!$this->token) {
+            Log::warning('AirefsClient: Missing API token, event not sent.');
+            return null;
+        }
 
-        return Http::withHeaders([
-            'Authorization' => 'Bearer ' . $this->token,
-            'Content-Type' => 'application/json',
-        ])->post('https://api.getairefs.com/v1/events', $data);
+        try {
+            $response = Http::withHeaders([
+                'Authorization' => 'Bearer ' . $this->token,
+                'Accept'        => 'application/json',
+                'Content-Type'  => 'application/json',
+            ])->post('https://api.getairefs.com/v1/events', $data);
+
+            // Log status and body for debugging
+            Log::info('AirefsClient response', [
+                'status' => $response->status(),
+                'body'   => $response->body(),
+            ]);
+            
+            return $response;
+        } catch (\Exception $e) {
+            Log::error('AirefsClient error: ' . $e->getMessage(), [
+                'trace' => $e->getTraceAsString(),
+            ]);
+            return null;
+        }
     }
 }
