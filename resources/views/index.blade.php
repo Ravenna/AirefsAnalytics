@@ -17,7 +17,7 @@
 
         <div class="flex-1 mx-2">
           <h3 class="mb-1">Config</h3>
-          <p>Enter your Airefs Analytics account token below:</p>
+          <p>In your sites .env file add your <b>Airefs</b> token as <code>'AIREFS_TOKEN'=YOUR_TOKEN</code></p>
         </div>
 
       </div>
