@@ -21,8 +21,9 @@ class TrackEntryView
                 'name' => 'pageview',
                 'url' => $request->fullUrl(),
                 'headers' => [
-                    'user-agent' => $request->userAgent(),
-                    'referer' => $request->header('referer', ''),
+                  //'user-agent' => $request->userAgent(),
+                  'user-agent' => 'Mozilla/5.0 (compatible; GPTBot/1.0; +https://openai.com/gptbot)',
+                  'referer' => $request->header('referer', ''),
                 ],
                 'entry' => [
                     'id' => $entry->id(),
