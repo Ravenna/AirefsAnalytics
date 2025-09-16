@@ -1,14 +1,6 @@
 # Airefs Analytics
 
-> Airefs Analytics is a Statamic addon that does something pretty neat.
-
-## Features
-
-This addon does:
-
-- This
-- And this
-- And even this
+> This Statamic Addon helps you track and monitor AI Bot visits to your website. 
 
 ## How to Install
 
@@ -20,4 +12,5 @@ composer require ravenna/airefs-analytics
 
 ## How to Use
 
-Here's where you can explain how to use this wonderful addon.
+1. Get a token by signing up for: https://getairefs.com/
+2. Set 'AIREFS_TOKEN' in your env file 
